@@ -73,6 +73,7 @@ Each model was evaluated using the six required metrics:
 | Random Forest | 1.000000 | 1.000000 | 1.000000 | 1.000000 | 1.000000 | 1.000000 |
 | XGBoost | 1.000000 | 1.000000 | 1.000000 | 1.000000 | 1.000000 | 1.000000 |
 
+Logistic Regression	|	| 0.803279	| 0.871212 | 0.800000 |	0.848485 |	0.823529 |	0.603071 |
 > *(Replace “…” with values from your notebook output.)*
 
 ---
