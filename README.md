@@ -86,28 +86,28 @@ Each model was evaluated using the six required metrics:
     - Slightly limited by its assumption of linear decision boundaries, which may not fully capture the dataset’s non‑linear patterns.
 
   2. Decision Tree — (Accuracy: 0.803, AUC: 0.801)
-    - Accuracy matches Logistic Regression, but AUC is lower, indicating weaker ranking ability.
-    - Precision and recall are identical, suggesting symmetric performance across classes.
-    - Trees capture non‑linear relationships but may overfit without pruning — the lower AUC hints at this.
+     - Accuracy matches Logistic Regression, but AUC is lower, indicating weaker ranking ability.
+     - Precision and recall are identical, suggesting symmetric performance across classes.
+     - Trees capture non‑linear relationships but may overfit without pruning — the lower AUC hints at this.
 
-  3. K‑Nearest Neighbors (KNN) — (Accuracy: 0.786, AUC: 0.837)
-    - Performs reasonably well, especially in recall (0.848).
-    - Sensitive to feature scaling — your scaling helped maintain performance.
-    - Slightly lower MCC indicates more misclassifications compared to top models.
-    - Performance depends heavily on the chosen value of K.
+  4. K‑Nearest Neighbors (KNN) — (Accuracy: 0.786, AUC: 0.837)
+      - Performs reasonably well, especially in recall (0.848).
+      - Sensitive to feature scaling — your scaling helped maintain performance.
+      - Slightly lower MCC indicates more misclassifications compared to top models.
+      - Performance depends heavily on the chosen value of K.
 
-  4. Naive Bayes — (Accuracy: 0.786, AUC: 0.884)
+  6. Naive Bayes — (Accuracy: 0.786, AUC: 0.884)
     - AUC is surprisingly strong, showing good probability calibration.
     - Precision is high (0.833), but recall is lower (0.757), meaning it misses some positive cases.
     - Independence assumption limits performance because heart disease features are correlated.
 
-  5. Random Forest (Ensemble) — (Accuracy: 0.754, AUC: 0.858)
+  7. Random Forest (Ensemble) — (Accuracy: 0.754, AUC: 0.858)
     - Performance is lower than expected for an ensemble model.
     - Accuracy and MCC are modest, suggesting the model may be underfitting or not tuned.
     - Still maintains decent recall and F1, showing robustness.
     - Could improve significantly with hyperparameter tuning (n_estimators, max_depth).
 
-  6. XGBoost (Ensemble) — (Accuracy: 0.721, AUC: 0.832)
+  8. XGBoost (Ensemble) — (Accuracy: 0.721, AUC: 0.832)
     - Lowest accuracy among all models in this run.
     - AUC is still respectable, meaning probability estimates are reasonable.
     - Likely underperforming due to default hyperparameters — XGBoost typically needs tuning to shine.
