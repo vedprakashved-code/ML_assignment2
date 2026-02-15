@@ -97,27 +97,27 @@ Each model was evaluated using the six required metrics:
       - Performance depends heavily on the chosen value of K.
 
   6. Naive Bayes — (Accuracy: 0.786, AUC: 0.884)
-    - AUC is surprisingly strong, showing good probability calibration.
-    - Precision is high (0.833), but recall is lower (0.757), meaning it misses some positive cases.
-    - Independence assumption limits performance because heart disease features are correlated.
+      - AUC is surprisingly strong, showing good probability calibration.
+      - Precision is high (0.833), but recall is lower (0.757), meaning it misses some positive cases.
+      - Independence assumption limits performance because heart disease features are correlated.
 
   7. Random Forest (Ensemble) — (Accuracy: 0.754, AUC: 0.858)
-    - Performance is lower than expected for an ensemble model.
-    - Accuracy and MCC are modest, suggesting the model may be underfitting or not tuned.
-    - Still maintains decent recall and F1, showing robustness.
-    - Could improve significantly with hyperparameter tuning (n_estimators, max_depth).
+      - Performance is lower than expected for an ensemble model.
+      - Accuracy and MCC are modest, suggesting the model may be underfitting or not tuned.
+      - Still maintains decent recall and F1, showing robustness.
+      - Could improve significantly with hyperparameter tuning (n_estimators, max_depth).
 
   8. XGBoost (Ensemble) — (Accuracy: 0.721, AUC: 0.832)
-    - Lowest accuracy among all models in this run.
-    - AUC is still respectable, meaning probability estimates are reasonable.
-    - Likely underperforming due to default hyperparameters — XGBoost typically needs tuning to shine.
-    - Despite being a powerful boosting model, it may be over‑regularized or not optimized for this dataset.
+      - Lowest accuracy among all models in this run.
+      - AUC is still respectable, meaning probability estimates are reasonable.
+      - Likely underperforming due to default hyperparameters — XGBoost typically needs tuning to shine.
+      - Despite being a powerful boosting model, it may be over‑regularized or not optimized for this dataset.
 
 Overall Summary 
-- Best overall performers: Logistic Regression and Decision Tree (balanced accuracy and F1).
-- Strong AUC performers: Naive Bayes and Logistic Regression.
-- KNN: Good recall but slightly unstable overall.
-- Random Forest & XGBoost: Surprisingly lower performance, likely due to lack of tuning — both models typically improve significantly with hyperparameter optimization.
+ - Best overall performers: Logistic Regression and Decision Tree (balanced accuracy and F1).
+ - Strong AUC performers: Naive Bayes and Logistic Regression.
+ - KNN: Good recall but slightly unstable overall.
+ - Random Forest & XGBoost: Surprisingly lower performance, likely due to lack of tuning — both models typically improve significantly with hyperparameter optimization.
 
 Conclusion: Simpler models (Logistic Regression, Decision Tree) performed more consistently on this dataset, while ensemble models require tuning to reach their full potential.
 ---
