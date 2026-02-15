@@ -125,8 +125,8 @@ Each model was evaluated using the six required metrics:
 
 ## 7. 🌐 Streamlit App
 
-### 🔗 **Live App Link**  
-*(Add your Streamlit Cloud link here)*
+### 🔗 **Live App Link**  https://mlassignment2-keakxmbcvxgz83ecvxaraw.streamlit.app/
+*(https://mlassignment2-keakxmbcvxgz83ecvxaraw.streamlit.app/)*
 
 ### Features
 - Upload CSV test data  
