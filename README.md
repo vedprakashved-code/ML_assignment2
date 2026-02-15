@@ -1,6 +1,6 @@
-# ML_assignment2
-ML_assignment2 for 6 models and application
-# ❤️ ML Assignment 2 — Heart Disease Classification (BITS WILP)
+# 02025aa05979 ML_assignment2 (BITS WILP)
+ML assignment2 for 6 models and application
+# ❤️ ML Assignment 2 — Heart Disease Classification 
 
 This project implements an end‑to‑end Machine Learning workflow using the **Heart Disease UCI Dataset**.  
 It includes model training, evaluation using six metrics, and deployment as an interactive **Streamlit web app**.
