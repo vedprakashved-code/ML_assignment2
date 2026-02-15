@@ -11,7 +11,7 @@ import seaborn as sns
 
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,
-    f1_score, roc_auc_score, confusion_matrix
+    f1_score, roc_auc_score, confusion_matrix, matthews_corrcoef
 )
 
 # ---------------------------------------------------------
@@ -116,4 +116,5 @@ if uploaded_file is not None:
 
 else:
     st.warning("Please upload a CSV file to continue.")
+
 
