@@ -113,13 +113,14 @@ Each model was evaluated using the six required metrics:
       - Likely underperforming due to default hyperparameters — XGBoost typically needs tuning to shine.
       - Despite being a powerful boosting model, it may be over‑regularized or not optimized for this dataset.
 
-Overall Summary 
+**Overall Summary**
  - Best overall performers: Logistic Regression and Decision Tree (balanced accuracy and F1).
  - Strong AUC performers: Naive Bayes and Logistic Regression.
  - KNN: Good recall but slightly unstable overall.
  - Random Forest & XGBoost: Surprisingly lower performance, likely due to lack of tuning — both models typically improve significantly with hyperparameter optimization.
 
-Conclusion: Simpler models (Logistic Regression, Decision Tree) performed more consistently on this dataset, while ensemble models require tuning to reach their full potential.
+**Conclusion**: Simpler models (Logistic Regression, Decision Tree) performed more consistently on this dataset, while ensemble models require tuning to reach their full potential.
+
 ---
 
 ## 7. 🌐 Streamlit App
