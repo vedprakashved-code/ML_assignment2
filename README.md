@@ -78,7 +78,18 @@ Each model was evaluated using the six required metrics:
 ---
 
 ## 6. 📝 Observations
-- Tree‑based models (Random Forest, XGBoost) generally perform better due to their ability to capture non‑linear relationships.  
+- Tree‑based models (Random Forest, XGBoost) generally perform better due to their ability to capture non‑linear relationships.
+  1. Logistic Regression — (Accuracy ≈ 0.81, AUC ≈ 0.93)
+    * Performs well for a linear baseline model.
+    * High AUC indicates it separates classes reasonably well.
+    * Slightly lower precision suggests it produces some false positives.
+    * Works best when relationships are linear, but heart disease data has non‑linear patterns, limiting performance.
+ 
+  2. Decision Tree — (Accuracy ≈ 0.98, AUC ≈ 0.98)
+    * Very high accuracy and recall, showing it fits the training data extremely well.
+    * However, such high performance often indicates overfitting, especially with small datasets.
+    * Decision Trees capture non‑linear relationships effectively but lack generalization without pruning.
+      
 - Logistic Regression provides a strong baseline with interpretable coefficients.  
 - Naive Bayes performs well when feature independence assumptions hold.  
 - KNN performance depends heavily on scaling and neighborhood size.  
