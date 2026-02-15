@@ -78,42 +78,48 @@ Each model was evaluated using the six required metrics:
 ---
 
 ## 6. 📝 Observations
-- Tree‑based models (Random Forest, XGBoost) generally perform better due to their ability to capture non‑linear relationships.
-  1. Logistic Regression — (Accuracy ≈ 0.81, AUC ≈ 0.93) provides a strong baseline with interpretable coefficients.  
-      - Performs well for a linear baseline model.
-      - High AUC indicates it separates classes reasonably well.
-      - Slightly lower precision suggests it produces some false positives.
-      - Works best when relationships are linear, but heart disease data has non‑linear patterns, limiting performance.
- 
-  2. Decision Tree — (Accuracy ≈ 0.98, AUC ≈ 0.98)
-      - Very high accuracy and recall, showing it fits the training data extremely well.
-      - However, such high performance often indicates overfitting, especially with small datasets.
-      - Decision Trees capture non‑linear relationships effectively but lack generalization without pruning.
-      
-  3. K‑Nearest Neighbors (KNN) — (Accuracy ≈ 0.86, AUC ≈ 0.96) KNN performance depends heavily on scaling and neighborhood size.  
-      - Performs better than Logistic Regression due to capturing non‑linear boundaries.
-      - Sensitive to feature scaling (you scaled correctly).
-      - Slight drop in recall indicates it misses some positive cases.
-      - Performance depends heavily on the choice of K and distance metric.\
 
-  4. Naive Bayes — (Accuracy ≈ 0.83, AUC ≈ 0.90) performs well when feature independence assumptions hold.  
-      - Performs decently despite its strong independence assumptions.
-      - Works well when features contribute independently, but heart disease features are correlated (e.g., age, cholesterol, thalach).
-      - Good recall shows it identifies positive cases well, but precision is slightly lower.
+ 1. Logistic Regression — (Accuracy: 0.803, AUC: 0.871)
+    - Performs well as a linear baseline model.
+    - AUC is strong, indicating good class separation.
+    - Precision and recall are balanced, showing stable performance.
+    - Slightly limited by its assumption of linear decision boundaries, which may not fully capture the dataset’s non‑linear patterns.
 
-  5. Random Forest (Ensemble) — (Accuracy = 1.00, AUC = 1.00)
-      - Achieved perfect performance on the test set.
-      - Strong indication of overfitting, but ensemble averaging reduces variance compared to a single tree.
-      - Captures complex interactions between features extremely well.
-      - Generally robust and stable, making it a strong candidate for deployment.
+  2. Decision Tree — (Accuracy: 0.803, AUC: 0.801)
+    - Accuracy matches Logistic Regression, but AUC is lower, indicating weaker ranking ability.
+    - Precision and recall are identical, suggesting symmetric performance across classes.
+    - Trees capture non‑linear relationships but may overfit without pruning — the lower AUC hints at this.
 
-  6. XGBoost (Ensemble) — (Accuracy = 1.00, AUC = 1.00) often achieves the best AUC due to gradient boosting optimization.
-      - Also achieved perfect metrics, showing extremely strong learning capability.
-      - Gradient boosting optimizes errors iteratively, making it powerful for tabular data.
-      - Like Random Forest, may be overfitting due to dataset size, but XGBoost usually generalizes better.
-      - Often considered the best model for structured datasets like this.
+  3. K‑Nearest Neighbors (KNN) — (Accuracy: 0.786, AUC: 0.837)
+    - Performs reasonably well, especially in recall (0.848).
+    - Sensitive to feature scaling — your scaling helped maintain performance.
+    - Slightly lower MCC indicates more misclassifications compared to top models.
+    - Performance depends heavily on the chosen value of K.
 
+  4. Naive Bayes — (Accuracy: 0.786, AUC: 0.884)
+    - AUC is surprisingly strong, showing good probability calibration.
+    - Precision is high (0.833), but recall is lower (0.757), meaning it misses some positive cases.
+    - Independence assumption limits performance because heart disease features are correlated.
 
+  5. Random Forest (Ensemble) — (Accuracy: 0.754, AUC: 0.858)
+    - Performance is lower than expected for an ensemble model.
+    - Accuracy and MCC are modest, suggesting the model may be underfitting or not tuned.
+    - Still maintains decent recall and F1, showing robustness.
+    - Could improve significantly with hyperparameter tuning (n_estimators, max_depth).
+
+  6. XGBoost (Ensemble) — (Accuracy: 0.721, AUC: 0.832)
+    - Lowest accuracy among all models in this run.
+    - AUC is still respectable, meaning probability estimates are reasonable.
+    - Likely underperforming due to default hyperparameters — XGBoost typically needs tuning to shine.
+    - Despite being a powerful boosting model, it may be over‑regularized or not optimized for this dataset.
+
+Overall Summary 
+- Best overall performers: Logistic Regression and Decision Tree (balanced accuracy and F1).
+- Strong AUC performers: Naive Bayes and Logistic Regression.
+- KNN: Good recall but slightly unstable overall.
+- Random Forest & XGBoost: Surprisingly lower performance, likely due to lack of tuning — both models typically improve significantly with hyperparameter optimization.
+
+Conclusion: Simpler models (Logistic Regression, Decision Tree) performed more consistently on this dataset, while ensemble models require tuning to reach their full potential.
 ---
 
 ## 7. 🌐 Streamlit App
