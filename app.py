@@ -93,7 +93,8 @@ if uploaded_file is not None:
             "Precision": precision_score(y_true, y_pred),
             "Recall": recall_score(y_true, y_pred),
             "F1 Score": f1_score(y_true, y_pred),
-            "AUC": roc_auc_score(y_true, probs)
+            "AUC": roc_auc_score(y_true, probs),
+            "MCC": matthews_corrcoef(y_true, y_pred)
         }
 
         st.write(metrics)
@@ -115,3 +116,4 @@ if uploaded_file is not None:
 
 else:
     st.warning("Please upload a CSV file to continue.")
+
